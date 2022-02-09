@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gdm.forma.inventory.consumableproducts.frontend.components.menu.MenuController"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="25.0"
+          AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0"
+          styleClass="container">
+        <VBox styleClass="v-box-page-titles">
+            <Label text="Inventar"
+                   styleClass="label-title">
+            </Label>
+            <Label text="Produse consumabile"
+                   styleClass="label-subtitle">
+            </Label>
+        </VBox>
+        <VBox>
+            <HBox styleClass="h-box-table-options">
+                <TextField promptText="Cauta produsul"
+                           fx:id="searchProductInput"
+                           onKeyReleased="#searchProduct">
+                </TextField>
+                <Region HBox.hgrow="ALWAYS" prefWidth="200.0">
+                </Region>
+                <Button fx:id="buttonAddProduct">
+                </Button>
+            </HBox>
+        </VBox>
+    </VBox>
+    <TableView fx:id="tableViewProduct"
+               AnchorPane.topAnchor="200.0" AnchorPane.bottomAnchor="75.0"
+               AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0">
+        <columns>
+            <TableColumn fx:id="tableColumnProductName">
+                <graphic>
+                    <Label prefHeight="55" styleClass="label-table-header" text="Nume produs" wrapText="true"/>
+                </graphic>
+            </TableColumn>
+            <TableColumn fx:id="columnProductStockInSalon">
+                <graphic>
+                    <Label styleClass="label-table-header" text="Stoc" wrapText="true"/>
+                </graphic>
+            </TableColumn>
+            <TableColumn fx:id="columnProductStockToBuy">
+                <graphic>
+                    <Label styleClass="label-table-header" text="Stoc de cumparat" wrapText="true"/>
+                </graphic>
+            </TableColumn>
+            <TableColumn fx:id="columnProductStockPerWeek">
+                <graphic>
+                    <Label styleClass="label-table-header" text="Stoc necesar" wrapText="true"/>
+                </graphic>
+            </TableColumn>
+            <TableColumn fx:id="columnProductActions">
+                <graphic>
+                    <Label styleClass="label-table-header" text="Actiuni" wrapText="true"/>
+                </graphic>
+                <columns>
+                    <TableColumn fx:id="columnProductActionMinus">
+                        <graphic>
+                            <Label styleClass="label-table-header-actions" text="Scade 1 unitate" wrapText="true"/>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="columnProductActionReset">
+                        <graphic>
+                            <Label styleClass="label-table-header-actions" text="Reseteaza stocul" wrapText="true"/>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="columnProductActionEdit">
+                        <graphic>
+                            <Label styleClass="label-table-header-actions" text="Editeaza produsul" wrapText="true"/>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="columnProductActionDelete">
+                        <graphic>
+                            <Label styleClass="label-table-header-actions" text="Sterge produsul" wrapText="true"/>
+                        </graphic>
+                    </TableColumn>
+                </columns>
+            </TableColumn>
+        </columns>
+    </TableView>
+</AnchorPane>
